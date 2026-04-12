@@ -1,9 +1,14 @@
 import time
 
-def buscaBinaria(iniLista, fimLista): # -> int
 
     # Remova o '#' do time.sleep(), caso queira debuggar a busca binária
     # time.sleep(5)
+
+def buscaBinaria(iniLista, fimLista): # -> int
+
+    '''
+    Algoritmo de busca binária possui complexidade de execução O(log2n)
+    '''
 
     # Preenchimento da lista com valores de parâmetros da função
     lista = []
@@ -16,12 +21,15 @@ def buscaBinaria(iniLista, fimLista): # -> int
     indiceMax = max(lista)
     indiceMin = min(lista)
     sinal = 0
+    contadorDeLoops = 0
 
     # Variável de valor desejado para busca dentro do intervalo definido dentro da lista
     valorASerBuscado = int(input(f"Digite um valor inteiro de {indiceMin} a {indiceMax} para localizar o elemento na lista: "))
 
     # Iteração da busca binária - Terminará quando o indice da lista coincidir com o valor a ser buscado dentro da lista, isto é, quando a valor a ser buscado dentro da lista for encontrado 
     while indicePrincipal != valorASerBuscado:
+
+        contadorDeLoops += 1
 
         # Materialização da lista temporária que varia conforme o afunilamento do intervalo
         listaTmp = []
@@ -49,7 +57,12 @@ def buscaBinaria(iniLista, fimLista): # -> int
             sinal = 0
             continue
 
-    return indicePrincipal
+    meuDicionario = {
+            "indice" : indicePrincipal,
+            "loops" : contadorDeLoops
+    }
+
+    return meuDicionario
 
 # Aprecie o resultado com moderação...
 inicioIntervalo = int(input('Escolha um número para ser o ínicio do intervalo: '))
