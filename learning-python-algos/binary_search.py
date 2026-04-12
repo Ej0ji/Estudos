@@ -23,46 +23,56 @@ def buscaBinaria(iniLista, fimLista): # -> int
     sinal = 0
     contadorDeLoops = 0
 
-    # Variável de valor desejado para busca dentro do intervalo definido dentro da lista
-    valorASerBuscado = int(input(f"Digite um valor inteiro de {indiceMin} a {indiceMax} para localizar o elemento na lista: "))
+    # Iteração da busca binária - Terminará quando o valor a ser buscado dentro da lista for encontrado, caso ocorra uma exceção será retornado um erro descritivo
+    while True:
+        try:
 
-    # Iteração da busca binária - Terminará quando o indice da lista coincidir com o valor a ser buscado dentro da lista, isto é, quando a valor a ser buscado dentro da lista for encontrado 
-    while indicePrincipal != valorASerBuscado:
+             # Variável de valor desejado para busca dentro do intervalo definido dentro da lista
+            valorASerBuscado = int(input(f"Digite um valor inteiro de {indiceMin} a {indiceMax} para localizar o elemento na lista: "))
 
-        contadorDeLoops += 1
+            if valorASerBuscado not in lista:
+                raise Exception("O valor a ser buscado não está presente no intervalo!")
 
-        # Materialização da lista temporária que varia conforme o afunilamento do intervalo
-        listaTmp = []
+            while indicePrincipal != valorASerBuscado:
 
-        for itensListaTmp in range(indiceMin, (indiceMax + 1)):
-            listaTmp.append(itensListaTmp)
-    
-        # Bloco de modificação do indice principal conforme 
-        if indiceMin != 1 and sinal == 0:
-            indicePrincipal = indicePrincipal + int(((max(listaTmp) + 1) - min(listaTmp)) / 2)
-        elif indiceMin != 1 and sinal == 1:
-            indicePrincipal = indicePrincipal - int(((max(listaTmp) + 1) - min(listaTmp)) / 2)
-        else:
-            indicePrincipal = int(max(listaTmp) / 2)
+                contadorDeLoops += 1
 
-        if indicePrincipal > valorASerBuscado:
+                # Materialização da lista temporária que varia conforme o afunilamento do intervalo
+                listaTmp = []
 
-            indiceMax = indicePrincipal
-            sinal = 1
-            continue
+                for itensListaTmp in range(indiceMin, (indiceMax + 1)):
+                    listaTmp.append(itensListaTmp)
+            
+                # Bloco de modificação do indice principal conforme 
+                if indiceMin != 1 and sinal == 0:
+                    indicePrincipal = indicePrincipal + int(((max(listaTmp) + 1) - min(listaTmp)) / 2)
+                elif indiceMin != 1 and sinal == 1:
+                    indicePrincipal = indicePrincipal - int(((max(listaTmp) + 1) - min(listaTmp)) / 2)
+                else:
+                    indicePrincipal = int(max(listaTmp) / 2)
+
+                if indicePrincipal > valorASerBuscado:
+
+                    indiceMax = indicePrincipal
+                    sinal = 1
+                    continue
+                
+                if indicePrincipal < valorASerBuscado:
+
+                    indiceMin = indicePrincipal
+                    sinal = 0
+                    continue
+
+            meuDicionario = {
+                    "indice" : indicePrincipal,
+                    "loops" : contadorDeLoops
+            }
+
+            return meuDicionario
+            
+        except Exception as e:
+            print(f"Ocorreu um erro: {e}")
         
-        if indicePrincipal < valorASerBuscado:
-
-            indiceMin = indicePrincipal
-            sinal = 0
-            continue
-
-    meuDicionario = {
-            "indice" : indicePrincipal,
-            "loops" : contadorDeLoops
-    }
-
-    return meuDicionario
 
 # Aprecie o resultado com moderação...
 inicioIntervalo = int(input('Escolha um número para ser o ínicio do intervalo: '))
