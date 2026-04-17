@@ -1,0 +1,5 @@
+# Notações big O
+
+- $O(n)$ -> Tempo de execução que varia de forma linear. Por exemplo, um algoritmo que executa a leitura de uma tabela de dados com 250.000 registros linha a linha, e que para ler cada linha, o mesmo leve um tempo fixo de 1ms para cada linha, levará 250.000 $\times$ 1ms.
+
+- $O(log_{2}n)$ -> Tempo de execução que varia de forma logarítmica. Usando o mesmo exemplo do algoritmo de $O(n)$, o algoritmo de $O(log_{2}n)$, levará 
