@@ -14,7 +14,7 @@ nomesGenericos = [
     "Monica", "Murilo", "Natalia", "Nicolas", "Otavio", "Paola", "Patricia", "Paulo",
     "Pedro", "Priscila", "Rafael", "Raquel", "Renan", "Renata", "Ricardo", "Roberta",
     "Roberto", "Rodrigo", "Rogerio", "Ronaldo", "Samuel", "Sandra", "Sara", "Sergio",
-    "Silvia", "Simone", "Sofia", "Tatiane", "Thiago", "Valeria", "Vanessa", "Victor"
+    "Silvia", "Simone", "Sofia", "Tatiane", "Thiago", "Valeria", "Vanessa", "Victor", "Ziraldo"
 ]
 
 

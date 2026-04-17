@@ -1,7 +1,11 @@
 # Biblioteca local com o dicionário de nomes genéricos
 from name_dict import *
+import time
 
 def buscaBinaria(iniLista, fimLista): # -> int
+
+    inicio = time.time()
+    fim = time.time()
 
     '''
     Algoritmo de busca binária para dicionários que possuem chaves (como índices numéricos - int) e valores (como nomes - strings).
@@ -69,11 +73,17 @@ def buscaBinaria(iniLista, fimLista): # -> int
                     sinal = 0
                     continue
             
+            fim = time.time()
+
+            tempoExec = fim - inicio 
+
             # Dicionario com o indice correspondente ao nome buscado no dicionário de nomes genéricos ('dicionarioGenerico') e quantidade de loops ocorridos para encontrar o nome
             dadosIndice = {
                     "indice" : indicePrincipal,
-                    "loops" : contadorDeLoops
+                    "loops" : contadorDeLoops,
+                    "tempo execução" : tempoExec
             }
+
 
             return dadosIndice
             
@@ -86,6 +96,9 @@ if __name__ == "__main__":
     inicioIntervalo = min(dicionarioGenerico)
     fimIntervalo = max(dicionarioGenerico)
     print(buscaBinaria(inicioIntervalo, fimIntervalo))
+
+
+
 
 
 
