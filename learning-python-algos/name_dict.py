@@ -13,8 +13,9 @@ nomesGenericos = [
     "Marcos", "Maria", "Mariana", "Mario", "Matheus", "Mauricio", "Melissa", "Miguel",
     "Monica", "Murilo", "Natalia", "Nicolas", "Otavio", "Paola", "Patricia", "Paulo",
     "Pedro", "Priscila", "Rafael", "Raquel", "Renan", "Renata", "Ricardo", "Roberta",
-    "Roberto", "Rodrigo", "Rogerio", "Ronaldo", "Samuel", "Sandra", "Sara", "Sergio",
-    "Silvia", "Simone", "Sofia", "Tatiane", "Thiago", "Valeria", "Vanessa", "Victor", "Ziraldo"
+    "Roberto", "Rodrigo", "Rogerio", "Ronaldo", "Samantha", "Samuel", "Sandra", "Sara",
+    "Sergio", "Silvia", "Simone", "Sofia", "Tatiane", "Thiago", "Valeria", "Vanessa",
+    "Victor", "Wagner", "Waldir", "Wellington", "Welton", "Xandi", "Zeléia", "Ziraldo" 
 ]
 
 
