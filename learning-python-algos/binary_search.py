@@ -4,9 +4,6 @@ import time
 
 def buscaBinaria(iniLista, fimLista): # -> int
 
-    inicio = time.time()
-    fim = time.time()
-
     '''
     Algoritmo de busca binária para dicionários que possuem chaves (como índices numéricos - int) e valores (como nomes - strings).
 
@@ -15,6 +12,10 @@ def buscaBinaria(iniLista, fimLista): # -> int
     fimLista -> Parâmetro de entrada para gerar o fim da lista do intervalo
 
     '''
+
+    # Inicialização de contagem de tempo de funcionamento da função
+    inicioFuncao = time.time()
+    fimFuncao = time.time()
 
     # Preenchimento da lista com o intervalo gerado a partir dos parâmetros de entrada da função
     intervaloDeIndices = []
@@ -27,7 +28,7 @@ def buscaBinaria(iniLista, fimLista): # -> int
     indiceMax = max(intervaloDeIndices)
     indiceMin = min(intervaloDeIndices)
     sinal = 0
-    contadorDeLoops = 0 
+    contadorDeLoops = 0
 
     # Iteração da busca binária - Terminará apenas quando o valor a ser buscado dentro da lista for encontrado, caso ocorra uma exceção será retornado um erro
     while True:
@@ -72,9 +73,9 @@ def buscaBinaria(iniLista, fimLista): # -> int
                     indiceMin = indicePrincipal
                     sinal = 0
                     continue
-            
-            fim = time.time()
 
+            # Finalização da contagem de tempo da função
+            fim = time.time()
             tempoExec = fim - inicio 
 
             # Dicionario com o indice correspondente ao nome buscado no dicionário de nomes genéricos ('dicionarioGenerico') e quantidade de loops ocorridos para encontrar o nome
