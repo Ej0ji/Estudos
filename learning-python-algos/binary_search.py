@@ -42,7 +42,8 @@ def buscaBinaria(iniLista, fimLista): # -> int
             if indiceASerBuscado == None:
                 raise Exception("O valor a ser buscado não está presente no intervalo!")
 
-            # Enquanto o indice de busca ('indicePrincipal') não for o mesmo que o indice a ser buscado ('indiceASerBuscado'), o loop para encontrar o indice específico ocorrerá
+            # Enquanto o indice de busca ('indicePrincipal') não for o mesmo que o indice a ser buscado ('indiceASerBuscado'), ocorrerá o loop para encontrar o indice específico.
+            # (OBS: É interessante observar que se o nome a ser buscado possuir o indice 0, ou seja, se o mesmmo for o primeiro nome da lista, não ocorrerá um loop, pois 'indicePrincipal' é inicializado com o valor 0).
             while indicePrincipal != indiceASerBuscado:
 
                 contadorDeLoops += 1 # Será usado para verificar, ao final, a quantidade loops que foram necessários para encontrar o índice do nome
@@ -75,8 +76,8 @@ def buscaBinaria(iniLista, fimLista): # -> int
                     continue
 
             # Finalização da contagem de tempo da função
-            fim = time.time()
-            tempoExec = fim - inicio 
+            fimFuncao = time.time()
+            tempoExec = fimFuncao - inicioFuncao
 
             # Dicionario com o indice correspondente ao nome buscado no dicionário de nomes genéricos ('dicionarioGenerico') e quantidade de loops ocorridos para encontrar o nome
             dadosIndice = {
